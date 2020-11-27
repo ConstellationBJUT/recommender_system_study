@@ -25,4 +25,7 @@ data description. 数据说明
 https://github.com/msnews/msnews.github.io/blob/master/assets/doc/introduction.md
 
 MIND paper is unrelate to the study notes. MIND paper url  
-https://msnews.github.io/
+https://msnews.github.io/  
+
+study notes blog records updating log and experience. 学习笔记博客用户记录更细和学习体会  
+https://blog.csdn.net/bjjoy2009/category_10615596.html
