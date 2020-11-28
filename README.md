@@ -28,4 +28,9 @@ MIND paper is unrelate to the study notes. MIND paper url
 https://msnews.github.io/  
 
 study notes blog records updating log and experience. 学习笔记博客用户记录更细和学习体会  
-https://blog.csdn.net/bjjoy2009/category_10615596.html
+https://blog.csdn.net/bjjoy2009/category_10615596.html  
+
+2020-11-28 update
+deep crossing: concat(user_vec, news_vec)->Resnet  
+user_vec.shape=(128,), news_vec.shape=(128,)  
+train_set.shape=(n, 256), train_label.shape=(n, 1)
