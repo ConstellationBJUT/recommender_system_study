@@ -30,6 +30,9 @@ https://msnews.github.io/
 study notes blog records updating log and experience. 学习笔记博客用户记录更细和学习体会  
 https://blog.csdn.net/bjjoy2009/category_10615596.html  
 
+down load tiny bert pre-trained model  
+https://github.com/google-research/bert
+
 2020-11-28 update
 deep crossing: concat(user_vec, news_vec)->Resnet  
 user_vec.shape=(128,), news_vec.shape=(128,)  
