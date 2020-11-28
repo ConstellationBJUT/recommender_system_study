@@ -912,8 +912,8 @@ def build_news_vec():
     np.save('dev/dev_news_id_index.npy', news_id_index)
 
 
-# news_vec = np.load('../data_demo/train/train_news.npy')
-# news_id_index = np.load('../data_demo/train/train_news_id_index.npy', allow_pickle=True).item()
+# news_vec = np.load('../data/train/train_news.npy')
+# news_id_index = np.load('../data/train/train_news_id_index.npy', allow_pickle=True).item()
 
 
 if __name__ == "__main__":

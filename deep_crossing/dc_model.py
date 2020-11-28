@@ -19,7 +19,7 @@ def dc1():
     内存消耗高，加载数据慢
     :return:
     """
-    data = np.load('../data_demo/train/behavior_train.npy', allow_pickle=True).item()
+    data = np.load('../data/train/behavior_train.npy', allow_pickle=True).item()
     raw_train_data = data['x_train']
     raw_train_label = data['y_train']
 
@@ -63,8 +63,8 @@ def dc2():
             ignore_errors=True)
 
     def load_vec():
-        news_vec = np.load('../data_demo/train/train_news_vec.npy')
-        user_vec = np.load('../data_demo/train/train_user_vec.npy')
+        news_vec = np.load('../data/train/train_news_vec.npy')
+        user_vec = np.load('../data/train/train_user_vec.npy')
         return tf.constant(news_vec, dtype=tf.float32), tf.constant(user_vec, dtype=tf.float32)
 
     nvec, uvec = load_vec()
@@ -73,9 +73,9 @@ def dc2():
         return tf.concat([tf.nn.embedding_lookup(uvec, x['uindex']), tf.nn.embedding_lookup(nvec, x['nindex'])],
                          axis=1), y
 
-    train_data = load_dataset('../data_demo/train/copy1_5train_index.csv')
+    train_data = load_dataset('../data/train/copy1_5train_index.csv')
     train_data = train_data.map(embedding)
-    dev_data = load_dataset('../data_demo/dev/dev_index.csv')
+    dev_data = load_dataset('../data/dev/dev_index.csv')
     dev_data = dev_data.map(embedding)
 
     model = tf.keras.Sequential([
@@ -202,8 +202,8 @@ def dc3():
             ignore_errors=True)
 
     def load_vec():
-        news_vec = np.load('../data_demo/train/train_news_vec.npy')
-        user_vec = np.load('../data_demo/train/train_user_vec.npy')
+        news_vec = np.load('../data/train/train_news_vec.npy')
+        user_vec = np.load('../data/train/train_user_vec.npy')
         return tf.constant(news_vec, dtype=tf.float32), tf.constant(user_vec, dtype=tf.float32)
 
     nvec, uvec = load_vec()
@@ -213,9 +213,9 @@ def dc3():
         x_news = tf.expand_dims(x_news, -1)
         return x_news, y
 
-    train_data = load_dataset('../data_demo/train/copy1_5train_index.csv')
+    train_data = load_dataset('../data/train/copy1_5train_index.csv')
     train_data = train_data.map(embedding)
-    dev_data = load_dataset('../data_demo/dev/dev_index.csv')
+    dev_data = load_dataset('../data/dev/dev_index.csv')
     dev_data = dev_data.map(embedding)
 
     model = Resnet18([2, 2, 2])
