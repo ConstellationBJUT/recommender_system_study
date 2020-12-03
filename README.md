@@ -37,3 +37,6 @@ https://github.com/google-research/bert
 deep crossing: concat(user_vec, news_vec)->Resnet  
 user_vec.shape=(128,), news_vec.shape=(128,)  
 train_set.shape=(n, 256), train_label.shape=(n, 1)
+
+2020-12-03 update  
+deep&cross 
