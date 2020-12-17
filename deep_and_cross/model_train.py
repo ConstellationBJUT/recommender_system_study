@@ -28,26 +28,39 @@ def train():
             num_epochs=1,
             ignore_errors=True)
 
-    def load_vec():
+    def load_vec_train():
         news_vec = np.load('../data_demo/train/train_news_vec.npy')
         user_vec = np.load('../data_demo/train/train_user_vec.npy')
         return tf.constant(news_vec, dtype=tf.float32), tf.constant(user_vec, dtype=tf.float32)
 
-    nvec, uvec = load_vec()
+    nvec_train, uvec_train = load_vec_train()
 
-    def embedding(x, y):
-        x_news = tf.concat([tf.nn.embedding_lookup(uvec, x['uindex']), tf.nn.embedding_lookup(nvec, x['nindex'])], axis=1)
+    def embedding_train(x, y):
+        x_news = tf.concat([tf.nn.embedding_lookup(uvec_train, x['uindex']), tf.nn.embedding_lookup(nvec_train, x['nindex'])], axis=1)
         x_news = tf.expand_dims(x_news, -1)
         return x_news, y
 
     train_data = load_dataset('../data_demo/train/copy1_5train_index.csv')
-    train_data = train_data.map(embedding)
+    train_data = train_data.map(embedding_train)
+
+    def load_vec_dev():
+        news_vec = np.load('../data_demo/dev/dev_news_vec.npy')
+        user_vec = np.load('../data_demo/dev/dev_user_vec.npy')
+        return tf.constant(news_vec, dtype=tf.float32), tf.constant(user_vec, dtype=tf.float32)
+
+    nvec_dev, uvec_dev = load_vec_dev()
+
+    def embedding_dev(x, y):
+        x_news = tf.concat([tf.nn.embedding_lookup(uvec_dev, x['uindex']), tf.nn.embedding_lookup(nvec_dev, x['nindex'])], axis=1)
+        x_news = tf.expand_dims(x_news, -1)
+        return x_news, y
+
     dev_data = load_dataset('../data_demo/dev/dev_index.csv')
-    dev_data = dev_data.map(embedding)
+    dev_data = dev_data.map(embedding_dev)
 
     model = get_model()
 
-    class_weight = {0: 0.18, 1: 0.82}
+    class_weight = {0: 0.3, 1: 0.7}
 
     checkpoint_save_path = 'model/deep_cross.ckpt'
     if os.path.exists(checkpoint_save_path + '.index'):
