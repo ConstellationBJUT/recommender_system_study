@@ -13,7 +13,7 @@ from sklearn.metrics import roc_auc_score
 
 def build_predict_result():
 
-    def load_dataset(csv_path, shuffle=True):
+    def load_dataset(csv_path, shuffle=False):
         return tf.data.experimental.make_csv_dataset(
             csv_path,
             batch_size=256,  # 设置batch size
