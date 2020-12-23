@@ -40,3 +40,6 @@ train_set.shape=(n, 256), train_label.shape=(n, 1)
 
 2020-12-03 update  
 deep&cross 
+
+2020-12-23 update  
+DIN
