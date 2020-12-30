@@ -43,3 +43,6 @@ deep&cross
 
 2020-12-23 update  
 DIN
+
+2020-12-30 update
+RNN
