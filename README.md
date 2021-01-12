@@ -38,11 +38,10 @@ deep crossing: concat(user_vec, news_vec)->Resnet
 user_vec.shape=(128,), news_vec.shape=(128,)  
 train_set.shape=(n, 256), train_label.shape=(n, 1)
 
-2020-12-03 update  
-deep&cross 
+2020-12-03 update deep&cross 
 
-2020-12-23 update  
-DIN
+2020-12-23 update DIN
 
-2020-12-30 update
-RNN
+2020-12-30 update RNN
+
+2020-01-12 update DIEN
