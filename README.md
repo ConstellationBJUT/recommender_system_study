@@ -44,4 +44,6 @@ train_set.shape=(n, 256), train_label.shape=(n, 1)
 
 2020-12-30 update RNN
 
-2020-01-12 update DIEN
+2020-01-12 update DIEN 
+
+2020-02-18 add a news recommend system demo
