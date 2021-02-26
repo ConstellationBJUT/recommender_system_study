@@ -46,4 +46,5 @@ train_set.shape=(n, 256), train_label.shape=(n, 1)
 
 2020-01-12 update DIEN 
 
-2020-02-18 add a news recommend system demo
+2020-02-18 add a news recommend system demo  
+recall module: https://zhuanlan.zhihu.com/p/351750833

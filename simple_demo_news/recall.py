@@ -119,9 +119,7 @@ if __name__ == '__main__':
     # 将label拼接回来
     recall_final = recall_final.merge(recall_score, how='left')
     # 将用户的得分按照从大到小排序
-    recall_final.sort_values(['user_id', 'sim_score'],
-                             inplace=True,
-                             ascending=[True, False])
+    recall_final.sort_values(['user_id', 'sim_score'], inplace=True, ascending=[True, False])
     # 只取每个用户前50个（对结果影响不大）
     recall_final = recall_final.groupby('user_id').head(50)
     log.debug(f'recall_final.shape: {recall_final.shape}')
@@ -143,4 +141,4 @@ if __name__ == '__main__':
         f"标签分布: {recall_final[recall_final['label'].notnull()]['label'].value_counts()}"
     )
 
-    recall_final.to_csv('result/recall.csv')
+    recall_final.to_csv('result/recall.csv', index=False)
